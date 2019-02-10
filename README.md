@@ -3,7 +3,7 @@ Script used for handling the LSM9DS1 accelerometer component to GPIO activation
 ## Required Hardware
 * Raspberry Pi 2/3
 * LSM9DS1 3-axis accelerometer
-* Any test component
+* Any GPIO test component(Buzzer, LED, etc.)
 
 ## Required Libraries
 * Python 3
