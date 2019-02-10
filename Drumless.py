@@ -7,6 +7,7 @@ import board
 import busio
 import adafruit_lsm9ds1
 import RPi.GPIO as GPIO
+import math
 
 # I2C connection:
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -63,10 +64,10 @@ while True:
 
     # Swing is based on gyro_avg and a given threshold
     gyro_avg = gyro_priority
-    if gyro_avg >= 275 and not firsties:
+    if gyro_avg >= 350 and not firsties:
         GPIO.output(17, GPIO.HIGH)
-
-    # Delay for a quarter-second.
-    time.sleep(0.25)
+        time.sleep(0.15)
+    else:
+        time.sleep(0.1)
     GPIO.output(17, GPIO.LOW)
     firsties = False
